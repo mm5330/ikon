@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'kon.js') }}"></script>
+    <script> 
+        users = {{users|tojson}}
+    </script>
+    <style>
+        #question
+        {
+            font-size:xx-large;
+            text-align: center;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        button
+        {
+            width: 20%;
+            height: 0;
+            padding-bottom:4%;
+        }
+        #year1
+        {
+            margin-right: 5%;
+            margin-left: 15%;
+        }
+        #equals
+        {
+            margin-right: 5%;
+        }
+        #idk
+        {
+            margin-left: 40%;
+        }
+        #scoreboard
+        {
+            margin-top:6%;
+        }
+        #firstplace
+        {
+            background-color: #33ABF9;
+            outline: 1px solid black;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+        .secondthird
+        {
+            background-color: #6EC1F8;
+            outline: 1px solid black;
+            font-weight:bold;
+            font-size: large;
+        }
+        .scorers
+        {
+            background-color: #AEEAFF;
+            outline: 1px solid black;
+        }
+        img
+        {
+            width:100%
+        }
+        .icon
+        {
+            width:10%;
+            margin: 2px;
+        }
+        #yourscore
+        {
+            margin-top:3%;
+            text-align: center;
+            font-size: large;
+        }
+        .medium
+        {
+            font-size: large;
+        }
+        #scorehead
+        {
+            text-align: center;
+            font-size: xx-large;
+        }
+        #header
+        {
+                font-weight: bold;
+                background-color: lightgoldenrodyellow;
+                font-size:xx-large;
+                padding-top:40px;
+                padding-bottom: 40px;
+        }
+        .hidden
+        {
+            visibility: hidden;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="header" class = "row justify-content-center">
+            Welcome to KON!
+        </div>
+        <div class="container">
+        <div class = "row">
+            <div class = "col-md-8">
+                <div id="question">
+                    In which year was was flooding in the north worse?
+                </div>
+                <div id="buttons" class="row">
+                    <button id="year1">
+                        {{year1}}
+                    </button>
+                    <button id="equals">
+                        =
+                    </button>
+                    <button id="year2">
+                        {{year2}}
+                    </button>
+                </div>
+                <br>
+                <div class = "row">
+                    <button id="idk">
+                        I Don't Know
+                    </button>
+                </div>
+                <div id="yourscore">
+                    {{ current_user.username }}'s Score:<br>
+                    <span id="points">{{ current_user.score }}</span> points
+                </div>
+                <br>
+                <div class="text-center medium hidden" id="match">
+                    You matched with:
+                </div>
+                <div class="text-center medium hidden" id="none">
+                    No Sources
+                </div>
+                <div class="row">
+                    <div class="col-md-4 hidden" id="satImage">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/FP_Satellite_icon.svg">
+                        <div class="text-center medium" id="satellite">
+                        </div>
+                    </div>
+                    <div class="col-md-4 hidden" id = "stationImage">
+                        <img src="https://image.flaticon.com/icons/svg/53/53658.svg">
+                        <div class="text-center medium" id="station">
+                        </div>
+                    </div>
+                    <div class="col-md-4 hidden" id="userImage">
+                        <img src="https://thumbs.dreamstime.com/b/people-vector-icon-group-people-symbol-illustration-businessman-group-logo-multiple-users-silhouette-icon-people-vector-icon-153483842.jpg">
+                        <div class="text-center medium" id="userNumbers">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-md-4">
+                <div id="scorehead"> SCOREBOARD:</div>
+                <div id ="scoreboard">
+                    <div id="firstplace">
+                        <img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">
+                        USER 1
+                    </div>
+                    <div class="secondthird">
+                        <img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">
+                        USER 2
+                    </div>
+                    <div class="secondthird"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 3</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 4</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 5</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 6</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 7</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 8</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 9</div>
+                    <div class="scorers"><img class = "icon" src ="https://www.nhlbi.nih.gov/sites/default/files/styles/square_crop/public/2017-12/genericavatar_55.png?itok=XOsJyktf">USER 10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

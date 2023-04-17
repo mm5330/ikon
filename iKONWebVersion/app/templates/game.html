@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'kon.js') }}"></script>
+    <script> 
+        users = {{users|tojson}}
+    </script>
+    <style>
+        #question
+        {
+            font-size:xx-large;
+            text-align: center;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        button
+        {
+            width: 20%;
+            height: 0;
+            padding-bottom:4%;
+        }
+        #year1, #equals
+        {
+            margin-right: 5%;
+            margin-left: 30%;
+        }
+
+        #scoreboard
+        {
+            margin-top:6%;
+        }
+        #firstplace
+        {
+            background-color: #33ABF9;
+            outline: 1px solid black;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+        .secondthird
+        {
+            background-color: #6EC1F8;
+            outline: 1px solid black;
+            font-weight:bold;
+            font-size: large;
+        }
+        .scorers
+        {
+            background-color: #AEEAFF;
+            outline: 1px solid black;
+        }
+        img
+        {
+            width:100%
+        }
+        .icon
+        {
+            width:10%;
+            margin: 2px;
+        }
+        #yourscore
+        {
+            margin-top:3%;
+            text-align: center;
+            font-size: large;
+        }
+        .medium
+        {
+            font-size: large;
+        }
+        #scorehead
+        {
+            text-align: center;
+            font-size: xx-large;
+        }
+        #header
+        {
+                font-weight: bold;
+                background-color: lightgoldenrodyellow;
+                font-size:xx-large;
+                padding-top:40px;
+                padding-bottom: 40px;
+        }
+        .hidden
+        {
+            visibility: hidden;
+        }
+
+        #popup-message {
+            background:rgba(0,0,0,.4);
+            cursor:pointer;
+            display:none;
+            height:100%;
+            position:fixed;
+            text-align:center;
+            top:0;
+            width:100%;
+            z-index:10000;
+        }
+        #popup-message .helper {
+            display:inline-block;
+            height:100%;
+            vertical-align:middle;
+        }
+        #popup-message > div {
+            background-color: #fff;
+            box-shadow: 10px 10px 60px #555;
+            display: inline-block;
+            height: auto;
+            max-width: 551px;
+            min-height: 100px;
+            vertical-align: middle;
+            width: 60%;
+            position: relative;
+            border-radius: 8px;
+            padding: 15px 5%;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="header" class = "row justify-content-center">
+            {{ script_dict["welcome"] }}{{ current_user.username }}!
+        </div>
+
+        <div id="popup-message">
+            <span class="helper"></span>
+            <div>
+                <p>{{ script_dict["loading_message"] }}</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class = "row">
+                <div class = "col-md-8">
+                    <div id="question">
+                        {{ script_dict["question"] }}
+                    </div>
+                    <div id="buttons" class="row">
+                        <button id="year1">{{ year1 }}</button>
+                        <button id="year2">{{ year2 }}</button>
+                    </div>
+                    <br>
+                    <div id="buttons" class = "row">
+                        <button id="equals">{{ script_dict["same"] }}</button>
+                        <button id="idk">{{ script_dict["dont_know"] }}</button>
+                    </div>
+                    <div id="yourscore">
+                        <span id="points">{{ script_dict["score"] }}{{ current_user.score }}</span> {{ script_dict["points"] }}
+                        <span id="rank">{{ script_dict["user_rank"] }}{{ current_user.rank }}.</span>
+                    </div>
+                    <br>
+                    <div class="text-center medium hidden" id="match">
+                        {{ script_dict["matched"] }}
+                    </div>
+                    <div class="text-center medium hidden" id="none">
+                        {{ script_dict["no_match"] }}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 hidden" id="satImage">
+                            <img src="../static/images/icon_satellite.svg">
+                            <div class="text-center medium" id="satellite">
+                            </div>
+                        </div>
+                        <div class="col-md-4 hidden" id = "stationImage">
+                            <img src="../static/images/icon_station.svg">
+                            <div class="text-center medium" id="station">
+                            </div>
+                        </div>
+                        <div class="col-md-4 hidden" id="userImage">
+                            <img src ="../static/images/icon_group_people.jpg">
+                            <div class="text-center medium" id="userNumbers">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-4">
+                    <div id="scorehead"> {{ script_dict["scoreboard"] }}</div>
+                    <div id ="scoreboard">
+                        <div id="firstplace"><img class = "icon" src ="../static/images/generic_avatar.png">USER 1</div>
+                        <div class="secondthird"><img class = "icon" src ="../static/images/generic_avatar.png">USER 2</div>
+                        <div class="secondthird"><img class = "icon" src ="../static/images/generic_avatar.png">USER 3</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 4</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 5</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 6</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 7</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 8</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 9</div>
+                        <div class="scorers"><img class = "icon" src ="../static/images/generic_avatar.png">USER 10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

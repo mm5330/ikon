@@ -1,0 +1,16 @@
+{
+  "satellite_matched": "Satellite:",
+  "station_matched": "Weather Station:",
+  "user_matched": "Number of Other Users:",
+  "register_success": "Congratulations, you are now a registered user!",
+  "question": "Which year was worse?",
+  "dont_know": "I don't know",
+  "score": "Score: ",
+  "points": "points. ",
+  "welcome": "Welcome to iKON, ",
+  "matched": "You matched with",
+  "no_match": "Sorry, this response didn't match any of the sources.",
+  "scoreboard": "SCOREBOARD:",
+  "same": "Same",
+  "loading_message": "We are matching your response with other sources.\nPlease wait ... ..."
+}

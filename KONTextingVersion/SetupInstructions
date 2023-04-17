@@ -1,0 +1,38 @@
+This App is made as an alternate to the web version already available on the IRI Website. The motivation behind creating this app is to provide an alternate form of data collection in areas where people don't have access to smartphones or the internet. The same principles of Gamification apply to the app.
+
+The app is written in Python using the Flask framework. It connects to Twilio API for text message communication and uses PostGres for database storage. 
+
+In order to setup the environment to run the App, you need the following Libraries installed preferably in a virtual envrionment:
+
+twilio.rest 
+flask 
+twilio.twiml.messaging_response 
+emoji
+psycopg2
+pandas
+random
+itertools
+
+In addition to this, you need to setup a PostGres environment, the data dump in part of this folder with the name: KonDB.sql. In order to set it up with the current PostGres system, you need to type: psql the_new_dev_db < KonDB.sql
+
+Once all of this is setup, you need to navigate to Twilio.com and sign in with an account to setup a number. Once you purchase a number, you need to go into settings and set the webhook of the messaging interface to the server address where the App will be running. For testing locally, you run in on localhost as any other web app, then use a tunneling tool like Ngrok to create virtual server.
+
+In addition to this, once your Twilio account is setup, you need a unique account_sid and auth_token to make sure your app can be authenticated by the Twilio servers. Once you have both of these, you can simply replace them in the code searching for auth_token and account_sid in the python file: KONMessagingWithDb.py
+
+Importing Dummy data:
+For demo purposes, you may need to feed data into the Postgres Database, you can use the function populateData(filename) in the python file, KONMessagingWithDb.py and simply give it a csv. Look at 'years.csv' for format. 
+
+Scoring: 
+For details on how scoring works, refer to the excel file KonScoringMechanism.xlsx but the brief summary is as follows: There are 3 ways the user can gain score. 
+1 - Matching with a local Satellite gaining a fixed score of 50
+2 - Matching with a local weather station gaining a fixed score of 50
+3 - Matching with other people who have answered similarly to the same question. This will give the user a variable score from 0 to 100 where he can get 100 if his answer is the same as all people who faced the same question and no one answered anything else. 
+
+Once all libraries are setup, you can simply run the app using python KONMessagingWithDb.py 
+
+
+
+
+
+
+

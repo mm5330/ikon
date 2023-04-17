@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" id="all-data-tab" href="{{ url_for('kon.dashboardall', deploy_id=deploy_id) }}" aria-selected="false">All Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-uppercase" id="after-start-tab" data-toggle="tab" href="#after-start" aria-controls="after-start" aria-selected="true">Data After Start Date</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="after-start" role="tabpanel" aria-labelledby="after-start-tab">
+                        {% if has_user_after %}
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>iKON Monitoring Dashboard - {{ data.deploy_name }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ statistics summary ] start -->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Total Unique Phone Numbers</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">{{ data.unique_numbers }}</h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <i class="feather icon-users text-c-purple f-38"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card Monthly-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Average Number of Responses</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">{{ data.avg_responses }}</h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <i class="feather icon-edit text-c-purple f-38"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-xl-4">
+                                    <div class="card yearly-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Number of Possible Comparisons (from data source)</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">{{ data.num_comparison }}</h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <i class="feather icon-file-text text-c-purple f-38"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ statistics summary ] end -->
+                                <!-- [ top response chart ] start -->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Top Players by Number of Responses</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div id="top_response_bar" style="height:370px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ top response chart ] end -->
+                                <!--[ demographic chart section ] start-->
+                                <div class="col-xl-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Gender of Players</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <div id="gender_player_pie" style="height:270px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Age of Players</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <div id="age_player_bar" style="height:270px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Income of Players</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <div id="income_player_bar" style="height:270px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Location of Players</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <div id="location_player_pie" style="height:270px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ demographic chart section ] end-->
+                                <!-- [ score statistics summary ] start -->
+                                <div class="col-xl-4 col-md-6">
+                                    <div class="card">
+                                        <div class="card-block border-bottom">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col">
+                                                    <span class="d-block text-uppercase">Lowest Score</span>
+                                                    <h3 class="f-w-300">{{ data.low_score }}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-block border-bottom">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col">
+                                                    <span class="d-block text-uppercase">Average Score</span>
+                                                    <h3 class="f-w-300">{{ data.avg_score }}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col">
+                                                    <span class="d-block text-uppercase">Highest Score</span>
+                                                    <h3 class="f-w-300">{{ data.high_score }}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ score statistics summary ] end -->
+                                <!--[ top score chart ] start-->
+                                <div class="col-xl-8 col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Top Players by Score</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div id="score_player_bar" style="height:370px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ top score chart ] end-->
+                                <!--[ top referral chart ] start-->
+                                <div class="col-xl-8 col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Top Players by Frequency Referrals</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div id="referral_player_bar" style="height:370px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ top referral chart ] end-->
+                                <!--[ referred user number ] start-->
+                                <div class="col-xl-4 col-md-6">
+                                    <div class="card card-event">
+                                        <div class="card-block">
+                                            <div class="row align-items-center justify-content-center">
+                                                <div class="col">
+                                                    <h5 class="m-0">Players Entering Game by Referral</h5>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="label theme-bg2 text-white f-14 f-w-400 float-right">{{ data.player_referred_percent }}%</label>
+                                                </div>
+                                            </div>
+                                            <h2 class="mt-3 f-w-300">{{ data.player_referred }}<sub class="text-muted f-14">Players</sub></h2>
+                                            <i class="fab fa-angellist text-c-purple f-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ referred user number ] end-->
+                                <!-- [ Year Comparison Heat Map ] start -->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Year Comparison Heat Map</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div id="comparison_heat_map" style="height:470px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ Year Comparison Heat Map ] end -->
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        {% else %}
+                            <p class="mb-0">The dashboard will be set up once the deployment gets its first user.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script src="../static/assets/js/echarts.min.js"></script>
+    <script type="text/javascript">
+        const myData = {{ data|tojson }}
+    </script>
+    <script src="../static/assets/js/dashboard.js"></script>
+{% endblock javascripts %}

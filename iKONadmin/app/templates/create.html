@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %} Create {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Your new deployment</h5>
+                            </div>
+                            <div class="card-body">
+                                <form role="form" method="post" action="">
+                                    {{ form.hidden_tag() }}
+                                    <h5>Basic Setting</h5>
+                                    <hr>
+                                    <label for="projectName">Project Names</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{form.project_name(list="pname_datalist", class="form-control", autofocus="autofocus")}}
+                                                <datalist id="pname_datalist">
+                                                    {% for pname in project_names %}
+                                                        <option value="{{ pname }}">
+                                                    {% endfor %}
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="projectNameHelp" class="form-text text-muted">Please select an existing project name or input a new one. Your deployments with the same the project name will be grouped together for easier management.</small>
+                                        </div>
+                                    </div>
+                                    <label for="deploymentName">Deployment name</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.deploy_name(placeholder="Your deployment name", class="form-control") }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label for="entryCode">Entry Code</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.entry_code(placeholder="Your entry code", class="form-control") }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            {% if valid_entry_code %}
+                                                <small id="entryCodeHelp" class="form-text text-muted">The entry code should contain lower-case letters only without any spaces.</small>
+                                            {% else %}
+                                                <small id="entryCodeHelp" style="color:red;">The entry code should contain lower-case letters only and has to be unique.</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <label for="languagesSelect">Language</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.language_select(class="form-control") }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label for="startDate">Start Date</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.start_date(class="form-control") }}
+                                                <small id="startDateHelp0" class="form-text text-muted">MM/DD/YYYY</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="startDateHelp1" class="form-text text-muted">The start date is for your record only. It is not going to effect the game process.</small>
+                                        </div>
+                                    </div>
+                                    <label for="endDate">End Date</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.end_date(class="form-control") }}
+                                                <small id="endDateHelp0" class="form-text text-muted">MM/DD/YYYY</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="endDateHelp1" class="form-text text-muted">Your deployment will be deactivated by the end of the selected date (23:59:59 EST).</small>
+                                            <small id="endDateHelp2" class="form-text text-muted"><b>IMPORTANT</b>: Please modify the <b>"game_time"</b> message in your language script accordingly to notify the game duration.</small>
+                                        </div>
+                                    </div>
+                                    <label for="gamificationSelect">Gamification</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.gamification_select(class="form-control") }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="gamificationSelectHelp" class="form-text text-muted">You have the following options:</small>
+                                            <small id="gamificationSelectHelp" class="form-text text-muted">- <b>Non-Gamified</b>: All players will be playing the vanilla-version iKON game (without leaderboard or response feedback).</small>
+                                            <small id="gamificationSelectHelp" class="form-text text-muted">- <b>Gamified</b>: All players will be playing the gamified iKON game (including leaderboard and response matching).</small>
+                                            <small id="gamificationSelectHelp" class="form-text text-muted">- <b>Semi-Gamified</b>: 50 percent of the players will be assigned the non-gamified version, while the other half will play the gamified version.</small>
+                                        </div>
+                                    </div>
+
+                                    <h5>Location List</h5>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.location_list(class="form-control", placeholder="location1\nlocation2\nlocation3", rows=4) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="locationHelp" class="form-text text-muted">Enter each location option on a new line. The last option on your list should indicate that the user is out of your desired region, i.e. if a user chooses the last option, they will be prompted to end the game.</small>
+                                        </div>
+                                    </div>
+
+                                    <h5>Data Source</h5>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="satSelect">Satellite Source</label>
+                                                {{ form.sat_select(class="form-control") }}
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="weaSelect">Weather Station Source</label>
+                                                {{ form.wea_select(class="form-control") }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <small id="dataSourceHelp0" class="form-text text-muted">- Click on the data source name below for more information. You may use and download the existing data set in our database.</small>
+                                            <small id="dataSourceHelp1" class="form-text text-muted">- To upload a new data source, please go to <a href="{{ url_for('kon.datasource') }}">Upload Data Source</a>.</small>
+                                            <small id="dataSourceHelp2" class="form-text text-muted">- If you cannot provide one of the weather station or satellite data, you may select <b>BLANK(weather station)</b> or <b>BLANK(satellite)</b> as a placeholder. The data source using the empty dataset will be omitted during the game process.</small>
+                                        </div>
+                                    </div>
+                                    <div class="accordion" id="allDataSourceInfo">
+                                        <div class="form-group">
+                                            <div id="headingAll">
+                                                <h5 class="mb-0"><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseAll" aria-expanded="false" aria-controls="collapseAll">More data source information</a></h5>
+                                            </div>
+                                            <br>
+                                            <div id="collapseAll" class="collapse" aria-labelledby="headingAll" data-parent="#allDataSourceInfo">
+                                                <div class="accordion" id="dataSourceInfo">
+                                                    {% for s in sources %}
+                                                        <div id={{ "heading" ~ (s.source_name | replace(" ", "-")) }}>
+                                                            <h6 class="mb-0"><a href="#!" class="collapsed" data-toggle="collapse" data-target={{ "#collapse" ~ (s.source_name | replace(" ", "-")) }} aria-expanded="false" aria-controls={{ "collapse" ~ (s.source_name | replace(" ", "-")) }}>{{ s.source_name }}</a></h6>
+                                                            <small class="form-text text-muted">{{ s.source_type }}</small>
+                                                        </div>
+                                                        <div id={{ "collapse" ~ (s.source_name | replace(" ", "-")) }} class="collapse" aria-labelledby={{ "heading" ~ (s.source_name | replace(" ", "-")) }} data-parent="#dataSourceInfo">
+                                                            <a href="{{ url_for('kon.source_download', source_name=s.source_name) }}">Download {{ s.source_name }} data</a><br>
+                                                            {{ s.description }}
+                                                        </div>
+                                                        <br>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button id="create-create" type="submit" class="btn btn-primary" name="create">Create</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{#    <script src="../static/assets/js/deploy-edit.js"></script>#}
+{% endblock javascripts %}

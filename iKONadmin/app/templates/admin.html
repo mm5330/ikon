@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %} Deployments {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <!-- [ Hover-table ] start -->
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Deployments</h5>
+                                <span class="d-block m-t-5">Click on a deployment name to view or edit</span>
+                            </div>
+                            <div class="card-block table-border-style">
+                                <h6><i>{{ msg }}</i></h6>
+                                <br>
+                                <div class="table-responsive">
+                                    {% for pname in proj_name_lst %}
+                                        <h5>Project <b>{{ pname }}</b></h5>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Deployment Name</th>
+                                                    <th>Entry Code</th>
+                                                    <th>Dashboard</th>
+                                                    <th>User Responses</th>
+                                                    <th>Language Script</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for d in proj_deploy_lst[loop.index0] %}
+                                                <tr>
+                                                    <th scope="row">{{ loop.index }}</th>
+                                                    <td><a href="{{ url_for('kon.edit', deploy_code=d.entry_code) }}">{{ d.deploymentname }}</a></td>
+                                                    <td>{{ d.entry_code }}</td>
+                                                    <td><a href="{{ url_for('kon.dashboardall', deploy_id=d.deploymentid) }}">View dashboard</a></td>
+                                                    <td><a href="{{ url_for('kon.responses_download', deploy_code=d.entry_code) }}">Download responses</a></td>
+                                                    <td><a href="{{ url_for('kon.editor', deploy_code=d.entry_code) }}">Edit script</a></td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    {% endfor %}
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ Hover-table ] end -->
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

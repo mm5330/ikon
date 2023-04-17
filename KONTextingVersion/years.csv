@@ -1,0 +1,121 @@
+Year,Value,Unit,Region,Country,Source Name,Source Type
+2000,15,mm,New York,USA,CHIRPS,Rainfall
+2001,15,mm,New York,USA,CHIRPS,Rainfall
+2002,10,mm,New York,USA,CHIRPS,Rainfall
+2003,12,mm,New York,USA,CHIRPS,Rainfall
+2004,6,mm,New York,USA,CHIRPS,Rainfall
+2005,13,mm,New York,USA,CHIRPS,Rainfall
+2006,12,mm,New York,USA,CHIRPS,Rainfall
+2007,18,mm,New York,USA,CHIRPS,Rainfall
+2008,4,mm,New York,USA,CHIRPS,Rainfall
+2009,7,mm,New York,USA,CHIRPS,Rainfall
+2010,8,mm,New York,USA,CHIRPS,Rainfall
+2011,9,mm,New York,USA,CHIRPS,Rainfall
+2012,6,mm,New York,USA,CHIRPS,Rainfall
+2013,13,mm,New York,USA,CHIRPS,Rainfall
+2014,1,mm,New York,USA,CHIRPS,Rainfall
+2015,2,mm,New York,USA,CHIRPS,Rainfall
+2016,19,mm,New York,USA,CHIRPS,Rainfall
+2017,18,mm,New York,USA,CHIRPS,Rainfall
+2018,10,mm,New York,USA,CHIRPS,Rainfall
+2019,15,mm,New York,USA,CHIRPS,Rainfall
+2000,12,mm,Boston,USA,CHIRPS,Rainfall
+2001,3,mm,Boston,USA,CHIRPS,Rainfall
+2002,4,mm,Boston,USA,CHIRPS,Rainfall
+2003,5,mm,Boston,USA,CHIRPS,Rainfall
+2004,13,mm,Boston,USA,CHIRPS,Rainfall
+2005,13,mm,Boston,USA,CHIRPS,Rainfall
+2006,15,mm,Boston,USA,CHIRPS,Rainfall
+2007,11,mm,Boston,USA,CHIRPS,Rainfall
+2008,19,mm,Boston,USA,CHIRPS,Rainfall
+2009,12,mm,Boston,USA,CHIRPS,Rainfall
+2010,10,mm,Boston,USA,CHIRPS,Rainfall
+2011,4,mm,Boston,USA,CHIRPS,Rainfall
+2012,7,mm,Boston,USA,CHIRPS,Rainfall
+2013,9,mm,Boston,USA,CHIRPS,Rainfall
+2014,6,mm,Boston,USA,CHIRPS,Rainfall
+2015,13,mm,Boston,USA,CHIRPS,Rainfall
+2016,19,mm,Boston,USA,CHIRPS,Rainfall
+2017,1,mm,Boston,USA,CHIRPS,Rainfall
+2018,4,mm,Boston,USA,CHIRPS,Rainfall
+2019,16,mm,Boston,USA,CHIRPS,Rainfall
+2000,11,mm,Taiwan,USA,CHIRPS,Rainfall
+2001,4,mm,Taiwan,USA,CHIRPS,Rainfall
+2002,9,mm,Taiwan,USA,CHIRPS,Rainfall
+2003,7,mm,Taiwan,USA,CHIRPS,Rainfall
+2004,16,mm,Taiwan,USA,CHIRPS,Rainfall
+2005,5,mm,Taiwan,USA,CHIRPS,Rainfall
+2006,4,mm,Taiwan,USA,CHIRPS,Rainfall
+2007,7,mm,Taiwan,USA,CHIRPS,Rainfall
+2008,9,mm,Taiwan,USA,CHIRPS,Rainfall
+2009,10,mm,Taiwan,USA,CHIRPS,Rainfall
+2010,18,mm,Taiwan,USA,CHIRPS,Rainfall
+2011,15,mm,Taiwan,USA,CHIRPS,Rainfall
+2012,17,mm,Taiwan,USA,CHIRPS,Rainfall
+2013,13,mm,Taiwan,USA,CHIRPS,Rainfall
+2014,4,mm,Taiwan,USA,CHIRPS,Rainfall
+2015,7,mm,Taiwan,USA,CHIRPS,Rainfall
+2016,8,mm,Taiwan,USA,CHIRPS,Rainfall
+2017,13,mm,Taiwan,USA,CHIRPS,Rainfall
+2018,11,mm,Taiwan,USA,CHIRPS,Rainfall
+2019,12,mm,Taiwan,USA,CHIRPS,Rainfall
+2000,48,degrees F,New York,USA,Laguardia,Weather Station
+2001,53,degrees F,New York,USA,Laguardia,Weather Station
+2002,21,degrees F,New York,USA,Laguardia,Weather Station
+2003,34,degrees F,New York,USA,Laguardia,Weather Station
+2004,56,degrees F,New York,USA,Laguardia,Weather Station
+2005,78,degrees F,New York,USA,Laguardia,Weather Station
+2006,12,degrees F,New York,USA,Laguardia,Weather Station
+2007,54,degrees F,New York,USA,Laguardia,Weather Station
+2008,68,degrees F,New York,USA,Laguardia,Weather Station
+2009,98,degrees F,New York,USA,Laguardia,Weather Station
+2010,8,degrees F,New York,USA,Laguardia,Weather Station
+2011,32,degrees F,New York,USA,Laguardia,Weather Station
+2012,43,degrees F,New York,USA,Laguardia,Weather Station
+2013,45,degrees F,New York,USA,Laguardia,Weather Station
+2014,45,degrees F,New York,USA,Laguardia,Weather Station
+2015,13,degrees F,New York,USA,Laguardia,Weather Station
+2016,13,degrees F,New York,USA,Laguardia,Weather Station
+2017,23,degrees F,New York,USA,Laguardia,Weather Station
+2018,22,degrees F,New York,USA,Laguardia,Weather Station
+2019,24,degrees F,New York,USA,Laguardia,Weather Station
+2000,34,degrees F,Boston,USA,Logan,Weather Station
+2001,34,degrees F,Boston,USA,Logan,Weather Station
+2002,45,degrees F,Boston,USA,Logan,Weather Station
+2003,67,degrees F,Boston,USA,Logan,Weather Station
+2004,87,degrees F,Boston,USA,Logan,Weather Station
+2005,43,degrees F,Boston,USA,Logan,Weather Station
+2006,13,degrees F,Boston,USA,Logan,Weather Station
+2007,24,degrees F,Boston,USA,Logan,Weather Station
+2008,55,degrees F,Boston,USA,Logan,Weather Station
+2009,45,degrees F,Boston,USA,Logan,Weather Station
+2010,55,degrees F,Boston,USA,Logan,Weather Station
+2011,65,degrees F,Boston,USA,Logan,Weather Station
+2012,78,degrees F,Boston,USA,Logan,Weather Station
+2013,65,degrees F,Boston,USA,Logan,Weather Station
+2014,32,degrees F,Boston,USA,Logan,Weather Station
+2015,32,degrees F,Boston,USA,Logan,Weather Station
+2016,44,degrees F,Boston,USA,Logan,Weather Station
+2017,55,degrees F,Boston,USA,Logan,Weather Station
+2018,88,degrees F,Boston,USA,Logan,Weather Station
+2019,12,degrees F,Boston,USA,Logan,Weather Station
+2000,54,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2001,6,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2002,54,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2003,87,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2004,98,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2005,90,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2006,76,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2007,42,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2008,32,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2009,54,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2010,65,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2011,7,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2012,65,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2013,78,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2014,89,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2015,4,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2016,3,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2017,32,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2018,44,degrees F,Taiwan,USA,Taoyuan,Weather Station
+2019,32,degrees F,Taiwan,USA,Taoyuan,Weather Station

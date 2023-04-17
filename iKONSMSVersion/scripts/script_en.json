@@ -1,0 +1,110 @@
+{
+   "sms":{
+      "base": {
+         "start_word":"start",
+         "resume_word": "resume",
+         "demographic_gender":"What is your gender? Reply with a selection. For instance if you are a woman send 1, if you are a man send 2:\n1: Woman\n2: Man\n3: I don’t want to answer.",
+         "demographic_age":"What is your age? Please write your answer. In case you want to skip this question, write 0.",
+         "demographic_location":"In which municipality of Cauca is located your coffee farm? Reply with the number associated to the nearest municipality:%s",
+         "demographic_income":"Your monthly income is in the next range:\n\n1. Between 0 and 350 Quetzales\n\n2. Between 350 and 800 Quetzales\n\n3. Between 800 and  1400 Quetzales\n\n4. Between 1400 and 2800 Quetzales\n\n5. Between 2800 and 3500 Quetzales\n\n6. Between 3500 and 5600 Quetzales\n\n7. More than 5600 Quetzales\n\n8. I don't want to respond",
+         "out_of_state_message": "We are sorry. This game is only available for players in the State of Cauca",
+         "question_exhausted":"Congratulations! You have completed all questions!",
+         "wait_for_question": "Please be patient while we are fetching the next question for you. The only valid response was your first response.",
+         "invalid_response":"Oops! Invalid response or option",
+
+         "who_we_are":"Dear Friends! Micro and Columbia University in the USA wants to invite you to answer a dynamic survey called iKON.",
+         "purpose": "The challenge is to see how good is your memory regarding climate events that affected our coffee harvest in Cauca state between %d and %d.",
+         "learning":"In this game you will learn what satellites, weather stations, and your neighbors report, and you will compare your memories with what they say.",
+         "privacy_notice":"Your responses are anonymous and will not be shared. You share the game and stop playing whenever you want. This is an educational game and it doesn't have any promotional, commercial, or gambling purpose. Additional info about the game and your information protection is in this link https://fist-ikon.iri.columbia.edu/info.",
+         "send_start":"If you agree, you want to start to play, and you are curious about who has the best memory, please send the word *%s*",
+         "resume_start":"To resume the game please send the word *%s*",
+         "demographic_intro":"KON the inca god of rain, needs your help to remember the worst rainy years in your region. Before that, we want to know your age, gender and the municipality where your farm is located.",
+         "game_start":"Let’s start the game! We will focus on the WORST YEARS IN TERMS OF EXCESS OF RAIN during September and October that can knock down the flowers and affect the coffee cherry production.",
+         "forward_invite":"Hi, I invite you to play this fun game, iKON, through which you will learn more about climate information that affect our crops and test your memory. To play add +16467669995 to your contacts which corresponds to iKON. Once you have the contact, send the word *%s*",
+         "game_time": "You can start playing the game now, *%s*, until *%s*.",
+         "game_over": "The game is over. Thanks for your participation!\nYour answers allowed KON to better understand the climate in Cauca.",
+         "question":"Which year was worse in terms of excess of rain around September and October affecting the flowering , %d or %d? Reply with a selection:\n1: %d\n2: %d\n3: Similar\n4: I don’t know\n5: Invite a friend",
+         "main_menu":"Reply with a selection:\n1: Start iKON game\n2: Invite a friend",
+         "invite":"Share iKON contact with a friend! After adding the contact ask him to send the word the word *%s*.\n\nAlternatively, forward to your friend the following message:",
+         "referral_reward":"Your friend %s has accepted your invitation and joined iKON."
+      },
+      "gamified": {
+         "general": {
+            "who_we_are":"Dear Friends! Tecnicafe, Caficauca and Columbia University in the USA wants to share with you an educational game called iKON.",
+            "purpose": "The challenge is to see how good is your memory regarding climate events that affected our coffee harvest in Cauca state between %d and %d.",
+            "learning":"In this game you will learn what satellites, weather stations, and your neighbors report, and you will compare your memories with what they say.",
+            "privacy_notice":"Your responses are anonymous and will not be shared. You share the game and stop playing whenever you want. This is an educational game and it doesn't have any promotional, commercial, or gambling purpose. Additional info about the game and your information protection is in this link https://fist-ikon.iri.columbia.edu/info.",
+            "send_start":"If you agree, you want to start to play, and you are curious about who has the best memory, please send the word *%s*",
+            "resume_start":"To resume the game please send the word *%s*",
+            "demographic_intro":"KON the inca god of rain, needs your help to remember the worst rainy years in your region. Before that, we want to know your age, gender and the municipality where your farm is located.",
+            "game_start":"Let’s start the game! We will focus on the WORST YEARS IN TERMS OF EXCESS OF RAIN during September and October that can knock down the flowers and affect the coffee cherry production.",
+            "forward_invite":"Hi, I invite you to play this fun game, iKON, through which you will learn more about climate information that affect our crops and test your memory. To play add +16467669995 to your contacts which corresponds to iKON. Once you have the contact, send the word *%s*",
+            "game_time": "You can start playing the game now, *%s*, until *%s*.",
+            "game_over": "The game is over. Thanks for your participation!\nYour answers allowed KON to better understand the climate in Cauca.",
+            "question":"Which year was worse in terms of excess of rain around September and October affecting the flowering , %d or %d? Reply with a selection:\n1: %d\n2: %d\n3: Similar\n4: I don’t know\n5: Check leaderboard or invite a friend and earn 100 points",
+            "main_menu":"Reply with a selection:\n1: Start iKON game\n2: Check latest leaderboard\n3: Invite a friend and earn 100 points once he/she starts to play",
+            "invite":"Share iKON contact with a friend and earn 100 points once your friend starts to play! After adding the contact ask him to send the word the word *%s*.\n\nAlternatively, forward to your friend the following message:",
+            "referral_reward":"Your friend %s has accepted your invitation and joined iKON. You have earned *100 points* for the referral.",
+
+            "satellite_matched":"\uD83D\uDEF0️ Your response matched with satellite %s\n",
+            "station_matched":"☔ Your response matched with weather station %s\n",
+            "user_matched":"\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66 You matched with %d%% of your neighbors\n",
+            "no_match":"Oops! Your response didn’t match with any of the sources. No worries, probably you are right and the others are wrong\n",
+            "earn_points":"Points earned for this response: %d\n",
+            "user_score":"Your current score is %d.\n",
+            "user_rank":"You rank %d of %d players. Keep going!"
+         },
+         "1":{
+            "user_rank":"You rank %d of %d players. Keep going!",
+            "per_five_resp":"You have completed %d questions. Great work! \uD83D\uDC4D\n",
+            "good_user_rank":"Congratulations, you rank %d of %d players!"
+         },
+         "2":{
+            "user_rank":"You rank %d of %d players. Keep going!",
+            "good_user_rank":"Congratulations, you rank %d of %d players!",
+            "per_five_resp":"You have completed %d questions. Great work! \uD83D\uDC4D\n\nTip. Try to associate the years KON is asking with something that happened in your life or your community during that time. How was the rainy season at that time? How the coffee harvest look like next year? Take your time!"
+         },
+         "3":{
+            "user_rank":"You *RANK %d OF %d* players. Keep going!",
+            "good_user_rank":"Congratulations, you *RANK %d OF %d* players!",
+            "per_five_resp":"You have completed %d questions. Great work! \uD83D\uDC4D\n\nTip. Try to associate the years KON is asking with something that happened in your life or your community during that time. How was the rainy season at that time? How the coffee harvest look like next year? Take your time!"
+         },
+         "4a":{
+            "user_rank":"You *RANK %d OF %d* players. Keep going!",
+            "good_user_rank":"Congratulations, you *RANK %d OF %d* players!",
+            "per_five_resp":"You have completed %d questions. Your are closer to complete the %d pairwise year comparisons that you can make between %d and %d. Great work! \uD83D\uDC4D\n\nTip. Try to associate the years KON is asking with something that happened in your life or your community during that time. How was the rainy season at that time? How the coffee harvest look like next year? Take your time!"
+         },
+         "4b":{
+            "user_rank":"You *RANK %d OF %d* players. Keep going!",
+            "good_user_rank":"Congratulations, you *RANK %d OF %d* players!",
+            "per_five_resp":"You have completed %d questions. Your are closer to complete the %d pairwise year combinations that you can make between %d and %d. Great work! \uD83D\uDC4D\n\nTip. Try to associate the years KON is asking with something that happened in your life or your community during that time. How was the rainy season at that time? How the coffee harvest look like next year? Take your time!"
+         },
+         "r1": {
+            "reward_message": "You will get a chance to win exciting prizes based on your score!:",
+            "rewards_list": "First place: Guadaña \nSecond place:  6 sacos de fertilizantes \nThird place: Fumigadora Royal Condor",
+            "reward_time": "If you are in the *top 6* you can claim your prize at Tecnicafe this *Tuesday, November 30th*"
+         },
+         "r2": {
+            "reward_message": "You will have the opportunity to win incredible prizes in a raffle that you will be part of just for participating in the game!",
+            "rewards_list": "Three prizes will be raffled: Guadaña, 6 sacos de fertilizantes y Fumigadora Royal Condor",
+            "reward_time": "If you decide to play and you are the winner of one of the raffle prizes, you will be notified on Tuesday, November 30 and you will be able to claim your prize on Friday, December 3 at Tecnicafé"
+         }
+      }
+   },
+   "web":{
+      "satellite_matched":"Satellite:",
+      "station_matched":"Weather Station:",
+      "user_matched":"Number of Other Users:",
+      "register_success":"Congratulations, you are now a registered user!",
+      "question":"Which year was worse?",
+      "dont_know":"I don't know",
+      "score":"Score: ",
+      "points":"points. ",
+      "welcome":"Welcome to iKON, ",
+      "matched":"You matched with",
+      "no_match":"Sorry, this response didn't match any of the sources.",
+      "scoreboard":"SCOREBOARD:",
+      "same":"Same",
+      "loading_message":"We are matching your response with other sources.\nPlease wait ... ..."
+   }
+}

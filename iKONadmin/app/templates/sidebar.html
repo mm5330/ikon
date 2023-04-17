@@ -1,0 +1,76 @@
+
+    <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div class="navbar-brand header-logo">
+                <a target="_blank" class="b-brand">
+                    <img src="../static/assets/images/iKON.jpg" alt="iKON LOge" width="50">
+                    <span class="b-title">iKON Admin</span>
+                </a>
+            </div>
+            <div class="navbar-content scroll-div">
+                <ul class="nav pcoded-inner-navbar">
+                    <li data-username="contact us" class="nav-item">
+                        <a href="{{ url_for('kon.info') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-info"></i></span><span class="pcoded-mtext">What is iKON</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navigation</label>
+                    </li>
+                    <li data-username="deployments"
+                        class="nav-item {% if 'index' in segment %} active {% endif %}">
+                        <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Deployments</span></a>
+                    </li>
+                    <li data-username="create new deployment" class="nav-item">
+                        <a href="{{ url_for('kon.create') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-plus-square"></i></span><span class="pcoded-mtext">Create New</span>
+                        </a>
+                    </li>
+                    <li data-username="upload data source" class="nav-item">
+                        <a href="{{ url_for('kon.datasource') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-upload"></i></span><span class="pcoded-mtext">Upload Data Source</span>
+                        </a>
+                    </li>
+                    <li data-username="Disabled Menu" class="nav-item">
+                        <a href="{{ url_for('kon.logout') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>More Info</label>
+                    </li>
+                    <li data-username="contact us" class="nav-item">
+                        <a href="{{ url_for('kon.contact') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-phone"></i></span><span class="pcoded-mtext">Contact Us</span>
+                        </a>
+                    </li>
+                    <li data-username="watch promotion video" class="nav-item">
+                        <a href="{{ url_for('kon.video') }}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-video"></i></span>
+                            <span class="pcoded-mtext">Watch Promotion Video</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <img src="../static/assets/images/climate_school_logo.png" alt="Columbia Climate School" width="170">
+                    </li>
+                    <li class="nav-item pcoded-menu-caption">
+                        <img src="../static/assets/images/IRI_logo.png" alt="International Research Institute for Climate and Society" width="170">
+                    </li>
+
+                    <li class="nav-item pcoded-menu-caption">
+                        <img src="../static/assets/images/DSI_logo.png" alt="Columbia Data Science Institute" width="170">
+                    </li>
+                    <li class="nav-item pcoded-menu-caption">
+                        <img src="../static/assets/images/ACToday_logo.png" alt="ACToday" width="85">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

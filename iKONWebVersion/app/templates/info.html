@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>iKON</h1>
+    <embed src="{{ url_for('static', filename = 'docs/') }}{{doc_name}}.pdf" width="100%" height="100%">
+{% endblock %}

@@ -1,0 +1,110 @@
+{
+   "sms":{
+      "base": {
+         "start_word":"comenzar",
+         "resume_word": "retomar",
+         "demographic_gender":"¿Cuál es tu género? Responde enviando el número asociado a la opción deseada. Por ejemplo si eres mujer envía 1 o si eres hombre envía 2:\n1: Mujer\n2: Hombre\n3: No deseas responder",
+         "demographic_age":"¿Cuál es tu edad? Por favor escribe tu respuesta. En caso de que desees saltar esta pregunta escribe 0",
+         "demographic_location":"¿En cuál de los siguientes municipios del Cauca está localizada o está mas cerca tu finca? Responde con el número asociado a la opción deseada:%s",
+         "demographic_income":"Tus ingresos mensuales están en el siguiente rango\n1: Entre 0 y 350 Quetzales\n2: Entre 350 y 800 Quetzales\n3: Entre 800 y 1400 Quetzales\n4: Entre 1400 y 2800 Quetzales\n5: Entre 2800 y 3500 Quetzales\n6: Entre 3500 y 5600 Quetzales\n7: Más de 5600 Quetzales\n8: No quiero responder",
+         "out_of_state_message": "Lo sentimos. Este juego está por ahora solo disponible para la región del Cauca",
+         "question_exhausted":"Felicitaciones! Has completado todas las preguntas posibles!",
+         "wait_for_question": "Por favor sea paciente mientras aparece la siguiente pregunta. La única respuesta válida es su primera respuesta.",
+         "invalid_response":"Ayayay! respuesta u opción no valida",
+
+         "who_we_are":"Apreciados amigos y amigas. Tecnicafé, Caficauca y la Universidad de Columbia en Estados Unidos quieren compartir un interesante juego educacional llamado iKON.",
+         "purpose":"El reto es ver que tan buena es tu memoria para recordar eventos climáticos que nos hayan afectado la cosecha cafetera en el Departamento del Cauca entre los años %d y %d",
+         "learning":"En este juego aprenderás además lo que reportan las estaciones climáticas, los satélites y tus vecinos, y compararás tus recuerdos con lo que ellos dicen",
+         "send_start":"Empecemos a jugar! Por favor envía la palabra *%s*",
+         "resume_start":"Para retomar el juego por favor envía la palabra *%s*",
+         "privacy_notice":"Tu información y respuestas son de carácter anónimo y no se compartirán con nadie. Puedes compartir el juego con tus contactos y dejar de jugar cuando así lo desees. Este juego es de caracter académico y no tiene ningún objetivo promocional, de publicidad o de apuesta. Más información sobre el juego y uso de la información en este link https://fist-ikon.iri.columbia.edu/info/es.",
+         "demographic_intro":"KON el dios Inca de la lluvia, necesita tu ayuda para recordar los peores años de lluvia. Antes de comenzar quisiéramos saber tu género, edad y en que municipio está localizada tu finca.",
+         "game_start":"A jugar se dijo! Nos enfocaremos en identificar LOS PEORES AÑOS DE EXCESO DE LLUVIA durante los meses de Septiembre y Octubre de cada año pues en estos meses la lluvia excesiva puede prevenir la floración y afectar el crecimiento de la cereza de café.",
+         "forward_invite":"Hola, te invito a jugar un juego divertido llamado iKON donde aprenderás sobre información climática que afecta nuestras cosechas y pondrás a prueba tu memoria. Para jugar, adiciona el número +16467669995 que corresponde a iKON. Una vez tengas el contacto de iKON envia la palabra *%s*",
+         "game_time": "Puedes empezar a jugar desde hoy *%s* y hasta *%s*.",
+         "game_over": "El juego ha terminado. Gracias por tu participación!\nTus respuestas permitieron que KON entendiera mejor el clima en el Cauca.",
+         "question": "¿Cuál de los siguientes años fué peor en términos de exceso de lluvias alrededor de los meses de Septiembre y Octubre afectando la floración, %d o %d? Responde con el número asociado a la opción deseada:\n1: %d\n2: %d\n3: Fueron parecidos\n4: No sé\n5: Invitar a un amigo",
+         "main_menu":"Responde seleccionando alguna de las siguientes opciones:\n1: Retomar el juego de nuevo\n2: Invitar a un amigo",
+         "invite":"Comparte el contacto de iKON con un amigo! Luego de adicionar el contacto tu amigo debe enviar la palabra *%s*.\n\nAlternativamente, reenviale el siguiente mensaje:",
+         "referral_reward":"Tu contacto %s ha aceptado tu invitación y ha agregado iKON."
+      },
+      "gamified": {
+         "general": {
+            "who_we_are":"Apreciados amigos y amigas. Tecnicafé, Caficauca y la Universidad de Columbia en Estados Unidos quieren compartir un interesante juego educacional llamado iKON.",
+            "purpose":"El reto es ver que tan buena es tu memoria para recordar eventos climáticos que nos hayan afectado la cosecha cafetera en el Departamento del Cauca entre los años %d y %d",
+            "learning":"En este juego aprenderás además lo que reportan las estaciones climáticas, los satélites y tus vecinos, y compararás tus recuerdos con lo que ellos dicen",
+            "send_start":"Empecemos a jugar! Por favor envía la palabra *%s*",
+            "resume_start":"Para retomar el juego por favor envía la palabra *%s*",
+            "privacy_notice":"Tu información y respuestas son de carácter anónimo y no se compartirán con nadie. Puedes compartir el juego con tus contactos y dejar de jugar cuando así lo desees. Este juego es de caracter académico y no tiene ningún objetivo promocional, de publicidad o de apuesta. Más información sobre el juego y uso de la información en este link https://fist-ikon.iri.columbia.edu/info/es.",
+            "demographic_intro":"KON el dios Inca de la lluvia, necesita tu ayuda para recordar los peores años de lluvia. Antes de comenzar quisiéramos saber tu género, edad y en que municipio está localizada tu finca.",
+            "game_start":"A jugar se dijo! Nos enfocaremos en identificar LOS PEORES AÑOS DE EXCESO DE LLUVIA durante los meses de Septiembre y Octubre de cada año pues en estos meses la lluvia excesiva puede prevenir la floración y afectar el crecimiento de la cereza de café.",
+            "forward_invite":"Hola, te invito a jugar un juego divertido llamado iKON donde aprenderás sobre información climática que afecta nuestras cosechas y pondrás a prueba tu memoria. Para jugar, adiciona el número +16467669995 que corresponde a iKON. Una vez tengas el contacto de iKON envia la palabra *%s*",
+            "game_time": "Puedes empezar a jugar desde hoy *%s* y hasta *%s*.",
+            "game_over": "El juego ha terminado. Gracias por tu participación!\nTus respuestas permitieron que KON entendiera mejor el clima en el Cauca.",
+            "question": "¿Cuál de los siguientes años fué peor en términos de exceso de lluvias alrededor de los meses de Septiembre y Octubre afectando la floración, %d o %d? Responde con el número asociado a la opción deseada:\n1: %d\n2: %d\n3: Fueron parecidos\n4: No sé\n5: Revisar puntaje o invitar a un amigo para ganar 100 puntos",
+            "main_menu":"Responde seleccionando alguna de las siguientes opciones:\n1: Retomar el juego de nuevo\n2: Verificar la tabla de posiciones\n3: Invitar a un amigo y ganar 100 puntos cuando este empiece a jugar",
+            "invite":"Comparte el contacto de iKON con un amigo y gana 100 puntos cuando dicho contacto empiece a jugar! Luego de adicionar el contacto tu amigo debe enviar la palabra *%s*.\n\nAlternativamente, reenviale el siguiente mensaje:",
+            "referral_reward":"Tu contacto %s ha aceptado tu invitación y ha agregado iKON. Por tanto, haz ganado *100 puntos*",
+
+            "satellite_matched":"\uD83D\uDEF0️ Tu respuesta coincide con el satélite %s\n",
+            "station_matched":"☔ Tu respuesta coincide con la estación climática %s\n",
+            "user_matched":"\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66 Coincides con el %d%% de tus vecinos\n",
+            "no_match":"Tu respuesta no coincide con ninguna de las otras fuentes. No te preocupes, puede que los otros estén mal y tú estés bien\n",
+            "earn_points":"Puntos ganados en esta respuesta: %d\n",
+            "user_score":"Tu puntaje actual es de %d puntos.\n",
+            "user_rank":"Estás ubicado en la posición %d de %d jugadores. Vamos!"
+         },
+         "1":{
+            "user_rank":"Estás ubicado en la posición %d de %d jugadores. Vamos!",
+            "per_five_resp":"Has completado %d preguntas. Buen trabajo! \uD83D\uDC4D\n",
+            "good_user_rank":"Felicitaciones, estás ubicado en la posición %d de %d jugadores!"
+         },
+         "2":{
+            "user_rank":"Estás ubicado en la posición %d de %d jugadores. Vamos!",
+            "good_user_rank":"Felicitaciones, estás ubicado en la posición %d de %d jugadores!",
+            "per_five_resp":"Has completado %d preguntas. Buen trabajo! \uD83D\uDC4D\n\nConsejo: Trata de recordar algún evento que haya pasado en tu vida o en tu comunidad en los años que KON te está preguntando ¿Como fueron las lluvias en ese momento?,¿cómo fué la cosecha cafetera el año siguiente?, Tómate tu tiempo!"
+         },
+         "3":{
+            "user_rank":"Estás ubicado en la POSICION %d DE %d jugadores. Vamos!",
+            "good_user_rank":"Felicitaciones, estás ubicado en la *POSICION %d DE %d* jugadores!",
+            "per_five_resp":"Has completado %d preguntas. Buen trabajo! \uD83D\uDC4D\n\nConsejo: Trata de recordar algún evento que haya pasado en tu vida o en tu comunidad en los años que KON te está preguntando ¿Como fueron las lluvias en ese momento?,¿cómo fué la cosecha cafetera el año siguiente?, Tómate tu tiempo!"
+            },
+         "4a":{
+            "user_rank":"Estás ubicado en la POSICION %d DE %d jugadores. Vamos!",
+            "good_user_rank":"Felicitaciones, estás ubicado en la *POSICION %d DE %d* jugadores!",
+            "per_five_resp":"Has completado %d preguntas. Cada vez estás más cerca de completar las %d posibles comparaciones de pares de años entre %d y %d. Buen trabajo! \uD83D\uDC4D\nConsejo: Trata de recordar algún evento que haya pasado en tu vida o en tu comunidad en los años que KON te está preguntando ¿Como fueron las lluvias en ese momento?,¿cómo fué la cosecha cafetera el año siguiente?, Tómate tu tiempo!"
+         },
+         "4b":{
+            "user_rank":"Estás ubicado en la POSICION %d DE %d jugadores. Vamos!",
+            "good_user_rank":"Felicitaciones, estás ubicado en la *POSICION %d DE %d* jugadores!",
+            "per_five_resp":"Has completado %d preguntas. Cada vez estás más cerca de completar las %d posibles combinaciones de pares de años entre %d y %d. Buen trabajo! \uD83D\uDC4D\nConsejo: Trata de recordar algún evento que haya pasado en tu vida o en tu comunidad en los años que KON te está preguntando ¿Como fueron las lluvias en ese momento?,¿cómo fué la cosecha cafetera el año siguiente?, Tómate tu tiempo!"
+         },
+         "r1": {
+            "reward_message": "Tendrás la oportunidad de ganar increibles premios dependiendo de tu puntaje!:",
+            "rewards_list": "Primer lugar: Guadaña \nSegundo lugar: 6 sacos de fertilizantes \nTercer lugar:  Fumigadora Royal Condor",
+            "reward_time": "Si logras clasificar entre los tres primeros podrás reclamar tu premio en Tecnicafe el Viernes 3 de Diciembre"
+         },
+         "r2": {
+            "reward_message": "Tendrás la oportunidad de ganar increibles premios en una rifa de la que harás parte solo por participar en el juego!:",
+            "rewards_list": "Se rifarán tres premios: Guadaña, 6 sacos de fertilizantes y Fumigadora Royal Condor",
+            "reward_time": "Si decides jugar y eres el ganador de uno de los premios de la rifa, serás notificado el Martes 30 de Noviembre y podrás reclamar tu premio el Viernes 3 de Diciembre en Tecnicafé"
+         }
+      }
+   },
+   "web":{
+      "satellite_matched":"Satellite:",
+      "station_matched":"Weather Station:",
+      "user_matched":"Number of Other Users:",
+      "register_success":"Congratulations, you are now a registered user!",
+      "question":"Which year was worse?",
+      "dont_know":"I don't know",
+      "score":"Score: ",
+      "points":"points. ",
+      "welcome":"Welcome to iKON, ",
+      "matched":"You matched with",
+      "no_match":"Sorry, this response didn't match any of the sources.",
+      "scoreboard":"SCOREBOARD:",
+      "same":"Same",
+      "loading_message":"We are matching your response with other sources.\nPlease wait ... ..."
+   }
+}

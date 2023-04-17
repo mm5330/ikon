@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %} Data Source {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Upload A New Data Source</h5>
+                            </div>
+                            <div class="card-body">
+                                <form role="form" method="post" action="">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="sourceType">Data source type</label>
+                                                <select class="form-control" id="sourceType">
+                                                    <option>Satellite</option>
+                                                    <option>Weather Station</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sourceName">Data source name</label>
+                                                <input type="text" name="sourceName" id="sourceName" class="form-control">
+                                                <small id="sourceNameHelp" class="form-text text-muted">Please note that you can either upload data for new data source or modify existing data source owned by you.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sourceCountry">Country</label>
+                                                <input type="text" name="sourceCountry" id="sourceCountry" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sourceRegion">Region</label>
+                                                <input type="text" name="sourceRegion" id="sourceRegion" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sourceDescription">Description</label>
+                                                <textarea name="sourceDescription" id="sourceDescription" class="form-control" rows="3" maxlength="507"></textarea>
+                                                <small id="sourceDescriptionHelp" class="form-text text-muted">500 character limit</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mark>Important Information</mark>
+                                            <br><br>
+                                            Please read carefully before uploading data.
+                                            <br><br>
+                                            - When matching data source information with a player response, the comparison between two years will be <b>absolute value</b> comparison, e.g. if the value for year1 is 3 and the value for year2 is 3.1, the comparison will show that year1 is less than year2, even though they are very similar. Therefore, it is highly recommend to preprocess the dataset to be uploaded.</li>
+                                            <br><br>
+                                            - In case of missing data for some years, the player response matching mechanism will omit the comparisons that involve those missing years.</li>
+                                            <br><br>
+                                            - Please be aware that sometimes the editor you used to format your dataset may unknowingly add unnecessary headers to your data, which might cause format error when uploading.</li>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="sourceFile" style="font-size: larger;color: black">Choose a csv file</label>
+                                        <input type="file" name="file" id="sourceFile" accept=".csv" required /><br>
+                                        <a href="{{ url_for('kon.source_sample', sample_name='sample') }}">Download sample data</a>
+                                        <small id="sourceFileHelp" class="form-text text-muted">Please follow the same formatting as the sample csv file.</small>
+                                        <br>
+                                        <!-- [ Table ] start -->
+                                        <div id="sourcePreview" class="col-xl-12">
+                                            <h6>Data Preview</h6>
+                                            <div class="table-responsive">
+                                                <table class="table" style="width:40vw;max-width:500px;min-width:300px">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Year</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="previewTable">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- [ Table ] end -->
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="sourceUpload">Please double check the table above to ensure your data is correctly formatted before uploading.</label>
+                                        <p id="uploadMsg" style="color:red"></p>
+                                        <button id="sourceUpload" type="button" class="btn btn-primary">Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{#    <script src="../static/assets/js/papaparse.min.js"></script>#}
+    <script src="../static/assets/js/source-upload.js"></script>
+{% endblock javascripts %}
