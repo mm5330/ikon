@@ -60,8 +60,8 @@ def incoming_sms():
 
 def sendMessage(intcount):
     client.messages.create(
-        to="+16468756700", 
-        from_="+18024594058",
+        to="0000",
+        from_="0000",
         body=comparisons[intcount])
     print(winner[intcount])
 
